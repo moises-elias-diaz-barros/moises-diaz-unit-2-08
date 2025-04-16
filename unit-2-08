@@ -1,0 +1,19 @@
+#include <Servo.h>
+
+Servo servoNumber1;  
+
+int potpin = 0;  
+int val;    
+
+void setup() {
+  servoNumber1.attach(9);  
+}
+
+void loop() {
+  val = analogRead(potpin);            
+  val = map(val, 0, 1023, 0, 180);     
+  servoNumber1.write(val);                  
+  delay(1000);                          
+}
+
+  
